@@ -12,6 +12,7 @@ local colors = {
 core.register_chatcommand("colorp",{
     privs = {eventadmin},
     local player = temp:get_player_name()
+    description = "lets the admin put colors on players name tag"
 
     func = function(param)
         local user,setTo = param:match("^([%a%d_-]+) (.+)$")
