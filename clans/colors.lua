@@ -12,10 +12,12 @@ local colors = {
 core.register_chatcommand("colorp",{
     privs = {eventadmin},
     local player = temp:get_player_name()
-    local player,color = param:match("^([%a%d_-]+) (.+)$")
 
-    player:set_nametag_attributes(color = color)
-    player:set_attribute("nametag_color", luanti.serialize(colors[param]))
+    func = function(param)
+        local user,setTo = param:match("^([%a%d_-]+) (.+)$")
+        local player = core.get_player_by_name(user)
+        player:set_nametag_attributes(color = colors(setTo))
+        player:set_attribute("nametag_color", luanti.serialize(colors[setTo]))
 
 
 })
