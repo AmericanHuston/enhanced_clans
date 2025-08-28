@@ -19,6 +19,6 @@ core.register_chatcommand("colorp",{
         local player = core.get_player_by_name(user)
         player:set_nametag_attributes(color = colors(setTo))
         player:set_attribute("nametag_color", luanti.serialize(colors[setTo]))
-
+    end
 
 })
